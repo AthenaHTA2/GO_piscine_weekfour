@@ -24,5 +24,5 @@ func ListPushBack(l *List, data interface{}) {
 		//l.Tail = n
 	}
 
-	//l.Tail = *{data}
+	l.Tail = n
 }
