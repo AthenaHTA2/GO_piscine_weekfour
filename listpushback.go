@@ -1,9 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"piscine"
-)
+package piscine
 
 type NodeL struct {
 	Data interface{}
@@ -16,18 +11,18 @@ type List struct {
 }
 
 func ListPushBack(l *List, data interface{}) {
-	l.Tail = l.PushBack(data)
-}
-
-func main() {
-	link := &piscine.List{}
-
-	piscine.ListPushBack(link, "Hello")
-	piscine.ListPushBack(link, "man")
-	piscine.ListPushBack(link, "How are you")
-
-	for link.Head != nil {
-		fmt.Println(link.Head.Data)
-		link.Head = link.Head.Next
+	n := &NodeL{Data: data}
+	if l.Head == nil {
+		l.Head = n
+		l.Tail = n
+	} else {
+		iterator := l.Head
+		for ; iterator.Next != nil; iterator = iterator.Next {
+		}
+		iterator.Next = n
+		//Nikolaj: l.Tail.Next = n
+		//l.Tail = n
 	}
+
+	//l.Tail = *{data}
 }
