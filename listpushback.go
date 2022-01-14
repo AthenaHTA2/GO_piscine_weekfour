@@ -20,8 +20,7 @@ func ListPushBack(l *List, data interface{}) {
 		for ; iterator.Next != nil; iterator = iterator.Next {
 		}
 		iterator.Next = n
-		//Nikolaj: l.Tail.Next = n
-		//l.Tail = n
+
 	}
 
 	l.Tail = n
